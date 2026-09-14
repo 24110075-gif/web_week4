@@ -7,14 +7,19 @@
 
     <display-name>Web Application Week 4</display-name>
 
-    <!-- Filter -->
+    <!-- Welcome file: tự động chuyển vào Servlet nếu truy cập / -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- Filter chỉ bảo vệ thư mục /html/* (các file download) -->
     <filter>
         <filter-name>DownloadAccessFilter</filter-name>
         <filter-class>filter.DownloadAccessFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>DownloadAccessFilter</filter-name>
-        <url-pattern>*.jsp</url-pattern>
+        <url-pattern>/html/*</url-pattern>
     </filter-mapping>
 
     <!-- Servlets -->
@@ -24,7 +29,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>AlbumListServlet</servlet-name>
-        <url-pattern></url-pattern>
+        <url-pattern>/albums</url-pattern>
     </servlet-mapping>
 
     <servlet>

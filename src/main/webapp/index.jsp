@@ -1,6 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
+<%@ page import="java.util.List, java.util.ArrayList, model.Album" %>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
+<%
+    if (request.getAttribute("albumList") == null) {
+        List<Album> albums = new ArrayList<>();
+        albums.add(new Album("8601", "86 (The Band) - True Life Songs and Pictures"));
+        albums.add(new Album("pf01", "Paddlefoot - The First CD"));
+        albums.add(new Album("pf02", "Paddlefoot - The Second CD"));
+        albums.add(new Album("jr01", "Joe Rut - Genuine Wood Grained Finish"));
+        request.setAttribute("albumList", albums);
+    }
+%>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">

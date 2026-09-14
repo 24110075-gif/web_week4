@@ -1,0 +1,18 @@
+# Maven build output
+target/
+
+# Tomcat temp files
+tomcat.*/
+
+# WEB-INF generated classes (copied by AppLauncher at runtime)
+src/main/webapp/WEB-INF/classes/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+*.class
+
+# OS files
+.DS_Store
+Thumbs.db
